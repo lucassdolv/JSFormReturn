@@ -1,29 +1,48 @@
 const nome = document.querySelector("#nome");
-const idade = document.querySelector('#idade');
+const email = document.querySelector('#email');
 const telefone = document.querySelector('#telefone');
-const button = document.querySelector("button");
+const button = document.querySelector(".button");
 const lista = document.querySelector(".lista");
 
-button.addEventListener ("click", (event) =>{
-    event.preventDefault()
+button.addEventListener("click", (event) => {
+    event.preventDefault();
     const inputNameValue = nome.value;
-    const inputAgeValue = idade.value;
+    const inputEmailValue = email.value;
     const inputTelefoneValue = telefone.value;
+
+    if (inputNameValue === "" || inputEmailValue === "" || inputTelefoneValue === "") {
+        alert("Digite corretamente as informações!");
+        return;
+    }
+
     const templateHTML = `
-    <li>
+    <li class="conteudo">
         <div class="users">
-            <h1>Usuario: ${inputNameValue} </h1>
-            <p>Idade: ${inputAgeValue} </p>
-            <p>Telefone: ${inputTelefoneValue}</p>
+            <div class="inf">
+                <h1>Usuario: ${inputNameValue} </h1>
+                <p>Email: ${inputEmailValue} </p>
+                <p>Telefone: ${inputTelefoneValue}</p>
+            </div>
+            <div class="delete">
+                <button class="button-delete">DELETAR</button>
+            </div>
         </div>
     </li>`;
-    if (inputNameValue === "" || inputAgeValue === "" || inputTelefoneValue === ""){
-        alert("Digite corretamente as informações!")
-        return false
-    }
+    
     lista.innerHTML += templateHTML;
-    nome.value = "";
-    idade.value = "";
-    telefone.value = "";
 
+    // Limpar os campos
+    nome.value = "";
+    email.value = "";
+    telefone.value = "";
+});
+
+// Usar event delegation para lidar com a remoção dos itens
+lista.addEventListener("click", (event) => {
+    if (event.target && event.target.classList.contains("button-delete")) {
+        const itemToRemove = event.target.closest(".conteudo");
+        if (itemToRemove) {
+            itemToRemove.remove();
+        }
+    }
 });

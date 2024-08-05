@@ -3,11 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-.container {
-    background-color: black;
+header {
+    background-color: rgb(1, 56, 56);
     height: 75px;
     color: white;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title {
+    width: auto;
+    height: auto;
 }
 main {
     margin-top: 2%;
@@ -18,9 +24,10 @@ form{
     margin: 0 auto;
     text-align: center;
     align-items: center;
-    width: 500px;
-    border: 2px solid black;
+    width: 400px;
+    background-color: rgb(1, 56, 56);
     padding: 20px;
+    color: white;
 }
 .form-control label {
     font-size: 20px;
@@ -40,13 +47,17 @@ form{
 .form-button button{
     font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 150px;
+    width: 120px;
     border-radius: 5px;
     background-color: black;
     color: white;
 }
+.cads {
+    margin-top: 2%;
+    text-align: center;
+}
 .lista {
-    margin-top: 5%;
+    margin-top: 2%;
     width: 100%;
     height: auto;
     display: grid;
@@ -54,14 +65,38 @@ form{
     list-style: none;
 }
 .users {
+    background-color: rgb(1, 56, 56);
     border: 1px solid black;
     padding: 20px;
+    justify-content: space-between;
+    display: flex;
+    color: white;
 }
-.users h1{
+.inf {
+    width: 70%;
+    height: 100%;
+}
+.inf h1{
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.users p{
+.inf p {
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
+}
+.delete {
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.delete button{
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    border: 1px solid crimson;
 }
